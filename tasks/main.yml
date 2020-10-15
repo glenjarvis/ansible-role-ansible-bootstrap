@@ -1,0 +1,26 @@
+---
+- name: Ensure /etc/ansible exits
+  file:
+    path: /etc/ansible
+    state: directory
+    recurse: yes
+    owner: root
+    group: root
+    mode: '0755'
+
+- name: Add standard ansible.cfg file
+  copy:
+    src: ansible.cfg
+    dest: /etc/ansible/ansible.cfg
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: Add standard ansible.cfg file
+  copy:
+    src: hosts
+    dest: /etc/ansible/hosts
+    owner: root
+    group: root
+    mode: '0644'
+
